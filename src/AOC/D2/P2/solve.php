@@ -1,6 +1,6 @@
 <?php
 
-namespace AOC\D2\P1;
+namespace AOC\D2\P2;
 
 use AOC\Helper\InputReader;
 
