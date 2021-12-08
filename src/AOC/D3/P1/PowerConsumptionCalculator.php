@@ -37,7 +37,7 @@ class PowerConsumptionCalculator
     }
 
     /**
-     * Generate the gamma rate (uses the most commonly occurring bit in each column of the $binaryReport)
+     * Generate the gamma rate (uses the most commonly occurring bit in each column of the $diagnosticReport)
      *
      * Converts the generated rate from binary to decimal
      *
@@ -49,7 +49,7 @@ class PowerConsumptionCalculator
     }
 
     /**
-     * Generate the epsilon rate (uses the least commonly occurring bit in each column of the $binaryReport)
+     * Generate the epsilon rate (uses the least commonly occurring bit in each column of the $diagnosticReport)
      *
      * Converts the generated rate from binary to decimal
      *
