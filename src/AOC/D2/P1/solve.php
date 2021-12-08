@@ -8,22 +8,19 @@ require_once __DIR__ . '/../../../../vendor/autoload.php';
 
 $lines = InputReader::fileToLines(__DIR__ . '/../input.txt');
 
-$map = [];
+$distances = [];
 
 foreach ($lines as $line) {
     $matches = [];
     preg_match('/^(?<direction>\w+) (?<distance>\d+)$/', $line, $matches);
-    $direction = $matches['direction'];
-    $distance = $matches['distance'];
-    $map[$direction] ??= [];
-    $map[$direction][] = $distance;
+    $distances[$matches['direction']] ??= [];
+    $distances[$matches['direction']][] = $matches['distance'];
 }
 
-$totalForward = array_sum($map['forward']);
-$totalUp = array_sum($map['up']);
-$totalDown = array_sum($map['down']);
-$totalDepth = $totalDown - $totalUp;
+foreach ($distances as $key => $values) {
+    $distances[$key] = array_sum($values);
+}
 
-$answer = $totalForward * $totalDepth;
+$answer = $distances['forward'] * ($distances['down'] - $distances['up']);
 
 die('Part 1: ' . $answer . "\n");
