@@ -6,8 +6,9 @@ use AOC\Helper\InputReader;
 
 require_once __DIR__ . '/../../../../vendor/autoload.php';
 
-$lines = InputReader::fileToLines(__DIR__ . '/../input.txt');
+$diagnosticReport = InputReader::fileToLines(__DIR__ . '/../input.txt');
 
-$answer = '@todo';
+$lifeSupportRatingCalculator = new LifeSupportRatingCalculator($diagnosticReport);
+$answer = $lifeSupportRatingCalculator->calculateSupportRating();
 
 die('Part 2: ' . $answer . "\n");
