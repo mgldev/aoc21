@@ -23,7 +23,7 @@ class FishSimulator
     public function __construct(string $filename, private int $days)
     {
         $data = array_map('intval', fgetcsv(fopen($filename, 'r')));
-        $this->intervals =array_count_values($data) + array_fill(0, 9, 0);
+        $this->intervals = array_count_values($data) + array_fill(0, 9, 0);
     }
 
     /**
