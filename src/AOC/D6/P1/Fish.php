@@ -14,7 +14,7 @@ class Fish
     private const NEW_FISH_TIMER_START = 8;
 
     public function __construct(private int $timer, private School $school) {}
-    
+
     public function tick(): void
     {
         $this->timer--;

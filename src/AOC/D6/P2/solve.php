@@ -1,14 +1,10 @@
 <?php
 
-namespace AOC\D3\P2;
-
-use AOC\Helper\InputReader;
+namespace AOC\D6\P2;
 
 require_once __DIR__ . '/../../../../vendor/autoload.php';
 
-$diagnosticReport = InputReader::fileToLines(__DIR__ . '/../input.txt');
-
-$lifeSupportRatingCalculator = new LifeSupportRatingCalculator($diagnosticReport);
-$answer = $lifeSupportRatingCalculator->calculateSupportRating();
+$simulator = new FishSimulator(__DIR__ . '/../input.txt', 256);
+$answer = $simulator->simulate();
 
 die('Part 2: ' . $answer . "\n");
